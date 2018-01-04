@@ -1,8 +1,13 @@
 <template>
     <div class="todos">
-        <ul>
-        <todo v-for="(todo) in todos" :nom="todo.nom"></todo>
-        </ul>
+        <h1>Liste des tâches  en cours</h1>
+        <br>
+        <div class="btn-group">
+            <router-link to="addTodo"><button type="button" class="btn btn-primary btn-lg">Ajouter une tâche</button></router-link>
+        </div>
+        <div class="container list-group">
+            <todo v-for="(todo) in todos"  @deleteTodo="deleteTodos(todo.id)" :key="todo.id" :id="todo.id" :nom="todo.nom" :description="todo.description"></todo>
+        </div>
     </div>
 </template>
 
@@ -13,14 +18,24 @@
     export default {
             name: 'TodosList',
             components: {
-                todo
+                todo,
             },
-            // Ici, les donn�es de notre composant
             data () {
             return {
-                todos: [
+                    todos: [
 
-                ]
+                    ]
+                }
+            },
+        methods: {
+
+            deleteTodos(id)
+            {
+                let i=0;
+                while(i<this.todos.length && this.todos[i].id!=id) {
+                    i++;
+                }
+                this.todos.splice(i,1);
             }
         },
         created () {

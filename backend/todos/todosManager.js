@@ -24,8 +24,8 @@ class TodoList {
 
     }
     deleteTodo(id) {
-        let todo = this.getTodo(id);
-        if(!todo) {
+        let index = this.getIndexOf(id);
+        if(index==-1) {
             return false;
         }
         this.list.splice(index,1);

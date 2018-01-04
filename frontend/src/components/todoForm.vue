@@ -1,41 +1,46 @@
 <template>
     <div class="todoForm">
-
-        <input type="text" id="nom" v-model="nom"/>
-        <label for="nom">Nom de la t‚che</label>
-
-        <br>
-
-        <textarea id="description" v-model="description"/></textarea>
-        <label for="description">Description de la t‚che</label>
-
-        <button type="button" @click="submitForm">CrÈer la t‚che</button>
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-lg-4 col-lg-offset-4">
+                    <label for="nom">Nom de la t√¢che</label>
+                    <input class="form-control" type="text" id="nom" v-model="nom"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-lg-offset-3">
+                    <label for="description">Description de la t√¢che</label>
+                    <textarea class="form-control" rows="5" id="description" v-model="description"/></textarea>
+                </div>
+           </div>
+        </div>
     </div>
 </template>
 
 <script>
     const axios = require('axios')
+
     export default {
         name: 'todoForm',
+        props: [
+            'id',
+        ],
         data () {
         return {
-            nom: '',
-            description: '',
-        }
-    },
-    methods: {
-        submitForm () {
-            var params = new URLSearchParams();
-            params.append('nom', this.nom);
-            params.append('description', this.description);
-            axios.post('http://localhost:3000/addTodo/', params,{withCredentials : true})
-                    .then(function (response) {
-                        console.log(response);
-                        if(response) {
+                nom:'',
+                description:''
+            }
+        },
+        created(){
+            if (this.id !== undefined) {
+                var link = "http://localhost:3000/getTodo/" + this.id;
+                axios.get(link, {withCredentials: true})
+                        .then(response=>{
+                    var todo = response.data;
+                    this.nom = todo.nom;
+                    this.description = todo.description;});
 
-                        }
-                    })
+            }
         }
-    }
     }
 </script>

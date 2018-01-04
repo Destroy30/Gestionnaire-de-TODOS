@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import TodosList from '@/components/TodosList'
-import todoForm from '@/components/todoForm'
+import createTodo from '@/components/createTodo'
+import updateTodo from '@/components/updateTodo'
 
 Vue.use(Router)
 
@@ -14,8 +15,14 @@ export default new Router({
     },
     {
       path: '/addTodo',
-      name: 'todoForm',
-      component: todoForm
+      name: 'createTodo',
+      component: createTodo
+    },
+    {
+      path: '/updateTodo/:id',
+      name: 'updateTodo',
+      props: true,
+      component: updateTodo
     }
   ]
 })

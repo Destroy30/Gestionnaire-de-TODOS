@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(function (req, res, next) {
-    //si la liste n'est pas encore crée
+    //si la liste n'est pas encore crÃ©e
     if(!req.session.todoList) {
         req.session.todoList = new TodoList();
     }
@@ -65,7 +65,7 @@ app.post('/updateTodo',urlEncodedParser,function(req,res) {
     res.send(result);
 });
 
-app.post('/deleteTodo/', function(req,res) {
+app.post('/deleteTodo/',urlEncodedParser,function(req,res) {
     let id = req.body.id;
     let result = req.session.todoList.deleteTodo(id);
     res.setHeader('Content-Type', 'application/json');
@@ -73,5 +73,5 @@ app.post('/deleteTodo/', function(req,res) {
 });
 
 app.listen(3000, function() {
-    console.log('API de gestion de todos lancée!');
+    console.log('API de gestion de todos lancÃ©e!');
 });
