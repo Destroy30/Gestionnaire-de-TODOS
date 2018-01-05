@@ -37,9 +37,14 @@
                 axios.get(link, {withCredentials: true})
                         .then(response=>{
                     var todo = response.data;
-                    this.nom = todo.nom;
-                    this.description = todo.description;});
-
+                    if(!todo) {
+                        this.$emit("noData");
+                    }
+                    else {
+                        this.nom = todo.nom;
+                        this.description = todo.description;
+                    }
+                });
             }
         }
     }

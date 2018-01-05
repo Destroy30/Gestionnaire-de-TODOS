@@ -5,3 +5,7 @@
 .itemTodoGroup {
     border-style: hidden;
 }
+
+.todos {
+    height:565px
+}

@@ -49,8 +49,9 @@ class TodoList {
         return this.list.length;
     }
     getAllTodosByLimit(offset=0,size = 6) {
-        let limit = ((offset+size)>this.list.length) ? this.list.length :  offset+size;
-        return this.list.slice(offset,limit);
+        var realOffset = parseInt(offset);
+        var realSize = parseInt(size);
+        return this.list.slice(realOffset,realOffset+realSize);
     };
 }
 

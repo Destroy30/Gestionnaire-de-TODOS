@@ -1,9 +1,9 @@
 <template>
     <div class="row todoElmt" >
         <div class="col-lg-6 col-lg-offset-3 btn-group list-group-item itemTodoGroup" role="group">
-            <button class="col-lg-10 btn btn-secondary" @click="openModal" type="button" data-toggle="modal" :data-target="'#modal-todo-'+id" :data-idTodo="id">{{ nom }}</button>
-            <router-link :to="'updateTodo/'+id"><button class="btn btn-warning glyphicon glyphicon-pencil"></button></router-link>
-            <button class="btn btn-danger glyphicon glyphicon-remove" @click="deleteSelf"></button>
+            <button class="col-lg-10 btn btn-default" @click="openModal" type="button" data-toggle="modal" :data-target="'#modal-todo-'+id" :data-idTodo="id">{{ nom }}</button>
+            <div class="col-lg-1"><router-link :to="'/updateTodo/'+id"><button class="btn btn-warning glyphicon glyphicon-pencil"></button></router-link></div>
+            <div class="col-lg-1"><button class="btn btn-danger glyphicon glyphicon-remove" @click="deleteSelf"></button></div>
             <sweet-modal :title="nom" :ref="'modal-todo-'+id">{{ description }}</sweet-modal>
         </div>
     </div>

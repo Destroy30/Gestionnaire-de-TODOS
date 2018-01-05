@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/frontend/src/components/HelloWorld.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/TodosList.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/createTodo.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/components/page.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/todo.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/todoDetail.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/todoForm.vue" charset="UTF-8" />

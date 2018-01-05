@@ -3,7 +3,7 @@
         <h1>Liste des tâches  en cours</h1>
         <br>
         <div class="btn-group">
-            <router-link to="addTodo"><button type="button" class="btn btn-primary btn-lg">Ajouter une tâche</button></router-link>
+            <router-link to="/addTodo"><button type="button" class="btn btn-primary btn-lg">Ajouter une tâche</button></router-link>
         </div>
         <div class="container list-group">
             <todo v-for="(todo) in todos"  @deleteTodo="deleteTodos(todo.id)" :key="todo.id" :id="todo.id" :nom="todo.nom" :description="todo.description"></todo>
@@ -20,6 +20,9 @@
             components: {
                 todo,
             },
+            props : [
+                'page'
+            ],
             data () {
             return {
                     todos: [
@@ -36,13 +39,28 @@
                     i++;
                 }
                 this.todos.splice(i,1);
+                this.loadData();
+                if(this.todos.length==0) {
+                    this.$emit('deletedLastElement');
+                }
+                else {
+                    this.$emit('update');
+                }
+            },
+            loadData() {
+                var offset = (this.page!==undefined && this.page>=1) ? (this.page-1)*6 : 0;
+                var link = "http://localhost:3000/listTodos/" + (offset)+"/6";
+                axios.get(link,{withCredentials: true})
+                        .then(response => {
+                            this.todos=response.data;
+                            if(this.todos.length==0) {
+                                this.$emit("noData");
+                            }
+                        });
             }
         },
         created () {
-            axios.get('http://localhost:3000/listTodos/',{withCredentials: true})
-                    .then(response => {
-                        console.log(response);
-                        this.todos=response.data;});
+            this.loadData();
         }
     }
 </script>

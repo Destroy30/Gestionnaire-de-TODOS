@@ -20,14 +20,21 @@
 
             submitForm () {
                 var params = new URLSearchParams();
-                params.append('nom', this.$refs.createForm.nom);
-                params.append('description', this.$refs.createForm.description);
-                axios.post('http://localhost:3000/addTodo/', params,{withCredentials : true})
-                        .then(function (response) {
-                            if(response.data) {
-                                router.push('/');
-                            }
-                        })
+                let nom = this.$refs.createForm.nom;
+                let description = this.$refs.createForm.description
+                if(nom.trim()=="") {
+                    alert("Vous devez compléter le nom de la tâche");
+                }
+                else {
+                    params.append('nom', nom);
+                    params.append('description', description);
+                    axios.post('http://localhost:3000/addTodo/', params, {withCredentials: true})
+                            .then(function (response) {
+                                if (response.data) {
+                                    router.go(-1)
+                                }
+                            })
+                }
             }
 
         }

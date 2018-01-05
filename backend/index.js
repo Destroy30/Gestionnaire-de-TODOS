@@ -56,6 +56,12 @@ app.get('/getTodo/:id', function(req,res) {
     res.send(todo);
 });
 
+app.get('/todosSize', function(req,res) {
+    let todoSize = req.session.todoList.getNumberOfTodos();
+    res.setHeader('Content-Type', 'application/json');
+    res.send({todoSize : todoSize});
+});
+
 app.post('/updateTodo',urlEncodedParser,function(req,res) {
     let id = req.body.id;
     let nomTodo = req.body.nom;
