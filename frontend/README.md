@@ -6,49 +6,49 @@ Rendu pour le TP Vue-JS
 
 ## Sommaire
 
-- [Instructions d'installation et de lancement](#)
+- [Instructions d'installation et de lancement](#instructions-dinstallation-et-de-lancement)
 
-- [Fonctionnalités](#)
+- [Fonctionnalités](#fonctionnalités)
 
-  -[Liste des tâches]
+  -[Liste des tâches](#liste-des-tâches)
   
-  -[Détail des tâches]
+  -[Détail des tâches](#détail-des-tâches)
   
-  -[Creation de tâche]
+  -[Creation de tâche](#creation-de-tâche)
   
-  -[Mise à jour de tâche]
+  -[Mise à jour de tâche](#mise-à-jour-de-tâche)
   
-  -[Suppression de tâche]
+  -[Suppression de tâche](#suppression-de-tâche)
   
-  -[Pagination]
+  -[Pagination](#pagination)
 
-- [Composants](#)
+- [Composants](#composants)
 
-  - [Composant page](#)
+  - [Composant page](#composant-page)
   
-  - [Composant TodosList](#)
+  - [Composant TodosList](#composant-todoslist)
  
-  - [Composant todo](#)
+  - [Composant todo](#composant-todo)
   
-  - [Composant todoForm](#)
+  - [Composant todoForm](#composant-todoform)
 
-  - [Composant createTodo](#)
+  - [Composant createTodo](#composant-createtodo)
   
-  - [Composant updateTodo](#)
+  - [Composant updateTodo](#composant-updatetodo)
   
-- [Modules](#)
+- [Modules](#modules)
 
-- [Conclusion et difficultés](#)
+- [Conclusion et difficultés](#conclusion-et-difficultés)
   
 ## Instructions d'installation et de lancement
 
 - Pour installer l'application, rendez vous dans le dossier frontend et éxécutez la commande suivante :
 
-*npm install*
+  *npm install*
 
 - Pour le lancement :
 
-*npm run build*
+  *npm run build*
 
 L'application est normalement accessible, par défaut, à l'adresse http://localhost:8080
 
@@ -109,7 +109,7 @@ Le fonctionnement et les règles (nom, retour en arrière...) sont les mêmes qu
 
 En cliquant sur le bouton de suppression (croix, bouton rouge) à côté d'une tâche de la liste, celle-ci est immédiatement supprimée.
 
-![deleteButton]()
+![deleteButton](https://user-images.githubusercontent.com/22858977/35188509-8bf5b7da-fe36-11e7-859d-64621d4da738.png)
 
 La liste est automatiquement mise à jour, les tâches d'autres pages peuvent remonter également.
 
