@@ -4,23 +4,26 @@
 
 Rendu pour le TP Vue-JS
 
+Cette partie présente les différentes informations concernant la partie frontend en Vue-JS.
+Pour plus d'informations, n'hésitez pas également à consulter le [readme concernant le backend](https://github.com/Destroy30/Gestionnaire-de-TODOS/blob/work/backend/README.md)
+
 ## Sommaire
 
 - [Instructions d'installation et de lancement](#instructions-dinstallation-et-de-lancement)
 
 - [Fonctionnalités](#fonctionnalités)
 
-  -[Liste des tâches](#liste-des-tâches)
+  - [Liste des tâches](#liste-des-tâches)
   
-  -[Détail des tâches](#détail-des-tâches)
+  - [Détail des tâches](#détail-des-tâches)
   
-  -[Creation de tâche](#creation-de-tâche)
+  - [Creation de tâche](#creation-de-tâche)
   
-  -[Mise à jour de tâche](#mise-à-jour-de-tâche)
+  - [Mise à jour de tâche](#mise-à-jour-de-tâche)
   
-  -[Suppression de tâche](#suppression-de-tâche)
+  - [Suppression de tâche](#suppression-de-tâche)
   
-  -[Pagination](#pagination)
+  - [Pagination](#pagination)
 
 - [Composants](#composants)
 
