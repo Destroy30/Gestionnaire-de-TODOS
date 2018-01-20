@@ -21,11 +21,11 @@ Rendu pour le TP NodeJS, API REST
 
  - Pour installer cette API node, rendez vous dans le dossier backend et éxécutez la commande suivante :
 
-*npm install
+*npm install*
 
 - Pour le lancement :
 
-*node index.js
+*node index.js*
 
 La console devrait alors affciher le message suivant : "API de gestion de todos lancée!"
 
