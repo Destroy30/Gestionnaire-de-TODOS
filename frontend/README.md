@@ -51,7 +51,7 @@ Pour plus d'informations, n'hésitez pas également à consulter le [readme conc
 
 - Pour le lancement :
 
-  *npm run build*
+  *npm run dev*
 
 L'application est normalement accessible, par défaut, à l'adresse http://localhost:8080
 
