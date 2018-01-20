@@ -4,7 +4,7 @@
 
 Rendu pour le TP NodeJS, API REST
 
-Cette partie présente les différentes informations concernant la partie backend en NodeJS. Pour plus d'informations, n'hésitez pas également à consulter le [readme concernant le frontend](https://github.com/Destroy30/Gestionnaire-de-TODOS/blob/work/frontend/README.md)
+Cette partie présente les différentes informations concernant la partie backend en NodeJS. Pour plus d'informations, n'hésitez pas également à consulter le [readme concernant le frontend](../frontend/README.md)
 
 ## Sommaire
 
