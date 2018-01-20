@@ -6,26 +6,26 @@ Rendu pour le TP NodeJS, API REST
 
 ## Sommaire
 
-- [Instructions d'installation et de lancement](#)
+- [Instructions d'installation et de lancement](#instructions-dinstallation-et-de-lancement)
 
-- [Développement](#)
+- [Développement](#développement)
 
   - [Module de gestion de la todo-list](#)
-  - [Middleware d'initilisation de la liste]
-  - [Routes]
-  - [Modules externes utilisés]
+  - [Middleware d'initilisation de la liste](#module-de-gestion-de-la-todo-list)
+  - [Routes](#routes)
+  - [Modules externes utilisés](#modules-externes-utilisés)
 
-- [Conclusion et difficultés](#)
+- [Conclusion et difficultés](#conclusion-et-difficultés)
   
 ## Instructions d'installation et de lancement
 
-Pour installer cette API node, rendez vous dans le dossier backend et éxécutez la commande suivante :
+ - Pour installer cette API node, rendez vous dans le dossier backend et éxécutez la commande suivante :
 
-npm install
+*npm install
 
-Pour le lancement :
+- Pour le lancement :
 
-node index.js
+*node index.js
 
 La console devrait alors affciher le message suivant : "API de gestion de todos lancée!"
 
@@ -64,7 +64,7 @@ L'API est utilisable via différente routes :
 
 - /addTodo : Permet d'ajouter une todo (en post) les paramètres à envoyer sont "nom" et "description"
 
-- /getTodo/:id : Permet de récupérer une instance de Todo contenue dans la TodoList selon son id (attention, il s'agit de l'id de la todo et non pas de son index dans la liste de la TodoList)
+- /getTodo/:id : Permet de récupérer une instance de Todo contenue dans la TodoList selon son id (attention,  **il s'agit de l'id de la todo et non pas de son index dans la liste de la TodoList**)
 
 - /todosSize : Permet de récupérer le nombre d'instance de Todo contenues actuellement contenues dans la TodoList
 
