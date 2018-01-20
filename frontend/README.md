@@ -5,7 +5,7 @@
 Rendu pour le TP Vue-JS
 
 Cette partie présente les différentes informations concernant la partie frontend en Vue-JS.
-Pour plus d'informations, n'hésitez pas également à consulter le [readme concernant le backend](https://github.com/Destroy30/Gestionnaire-de-TODOS/blob/work/backend/README.md)
+Pour plus d'informations, n'hésitez pas également à consulter le [readme concernant le backend](../backend/README.md)
 
 ## Sommaire
 
