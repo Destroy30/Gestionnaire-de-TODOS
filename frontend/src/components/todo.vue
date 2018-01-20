@@ -10,6 +10,14 @@
 </template>
 
 <script>
+
+    /**
+     * Cette classe va permettre l'affichage d'une todo
+     * De base, il s'agit simplement d"une ligne avec le nom de la todo
+     * Des boutons sont également mis à disposition pour modifier, supprimer la todo...
+     * Le clic sur la todo, va ouvrir une modal pour présenter le contenu en détail
+     */
+
     import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
     const axios = require('axios')
 
@@ -25,17 +33,23 @@
             'description',
         ],
         methods : {
+            /**
+             * Peremet d'ouvrir une modal présentant le contenu de la todo en détail
+             */
             openModal() {
                 var ref = "modal-todo-" + this.id
                 this.$refs[ref].open();
             },
+            /**
+             * Permet à la todo de se supprimer
+             */
             deleteSelf() {
                 var params = new URLSearchParams();
                 params.append('id', this.id);
                 axios.post('http://localhost:3000/deleteTodo/', params,{withCredentials : true})
                         .then(response => {
                             if(response.data) {
-                                this.$emit('deleteTodo');
+                                this.$emit('deleteTodo'); //On informe la liste que la todo vient d'être supprimée
                             }
                         })
             }

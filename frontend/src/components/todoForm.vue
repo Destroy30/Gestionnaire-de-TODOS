@@ -18,6 +18,13 @@
 </template>
 
 <script>
+
+    /**
+     * Ce component présente un formulaire contenant les informations d'une todo
+     * Il est utilisé soit par le composant pour créer ou celui pour mettre à jour
+     * Il ne possède pas d'action lors de la soumission, ce sont les composants qui l'utilisent (create/update) qui définissent la bonne action.
+     */
+
     const axios = require('axios')
 
     export default {
@@ -32,13 +39,13 @@
             }
         },
         created(){
-            if (this.id !== undefined) {
+            if (this.id !== undefined) { //Cas de mise à jour, ou plus largement, si on veut avoir les données (on passe alors l'id de la todo pour récupérer les données)
                 var link = "http://localhost:3000/getTodo/" + this.id;
                 axios.get(link, {withCredentials: true})
                         .then(response=>{
                     var todo = response.data;
                     if(!todo) {
-                        this.$emit("noData");
+                        this.$emit("noData"); //Si il n'y a pas de données (id inconnu) on préviens le composant parent
                     }
                     else {
                         this.nom = todo.nom;

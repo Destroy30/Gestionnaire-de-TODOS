@@ -12,6 +12,12 @@
 </template>
 
 <script>
+    /**
+     * Ce composant va gérer une liste de todos, selon une page donnée (c'est à dire, une ifnormation sur les todos qui doivent être affichées)
+     * Elle va donc être appellée par un composant page
+     * La TodoList va présenter divers comportements, lors de la supression d'une todo par exemple
+     */
+
     import todo from '@/components/todo'
     const axios = require('axios')
 
@@ -31,15 +37,19 @@
                 }
             },
         methods: {
-
+            /**
+             * Methode de supression d'une todo par un id
+             */
             deleteTodos(id)
             {
+                //On supprime da ltodo de l'affichage de la liste
                 let i=0;
                 while(i<this.todos.length && this.todos[i].id!=id) {
                     i++;
                 }
                 this.todos.splice(i,1);
                 this.loadData();
+                //Si jamais il n'y a plus de todos à afficher, on previens la page (le composant) pour changer de page (revenir une page en arrière)
                 if(this.todos.length==0) {
                     this.$emit('deletedLastElement');
                 }
@@ -54,7 +64,7 @@
                         .then(response => {
                             this.todos=response.data;
                             if(this.todos.length==0) {
-                                this.$emit("noData");
+                                this.$emit("noData"); //Si n'ya pas de données à afficher, on previens le composant supérieur
                             }
                         });
             }
