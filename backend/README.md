@@ -1,4 +1,4 @@
-# Backend : Gestionnaire de todo
+# Backend : Gestionnaire de todos
 
 *(Auteur : **Malo Gasquet**)*
 
