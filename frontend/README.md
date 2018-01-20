@@ -1,4 +1,4 @@
-# Frontend : Gestionnaire de todo
+# Frontend : Gestionnaire de todos
 
 *(Auteur : **Malo Gasquet**)*
 
