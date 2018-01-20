@@ -23,7 +23,7 @@ Cette partie présente les différentes informations concernant la partie backen
 
  - Pour installer cette API node, rendez vous dans le dossier backend et éxécutez la commande suivante :
 
-  *npm install*
+    *npm install*
 
 - Pour le lancement :
 
